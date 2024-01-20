@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Afacad";
+  font-size: 24px;
+}
+
+html body {
+  height: 100%;
+  background-color: azure;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
+
+.container span {
+  font-size: 7rem;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 5px 10px;
+  margin: 3px;
+  border-radius: 10px;
+  border-style: none;
+  border: 1px solid gray;
+  background: radial-gradient(lightgray, rgb(185, 184, 184));
+  box-shadow: 1px 2px 2px black;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: radial-gradient(rgb(226, 225, 225), rgb(194, 194, 194));
+}
+
+.btn:active {
+  box-shadow: 0.5px 1px 1px;
+  background: radial-gradient(rgb(151, 150, 150), rgb(104, 101, 101));
+}
+
+.random {
+  margin-top: 10px;
+
+}
+
+.random:active {
+  background: linear-gradient(red, orange, yellow, green, blue, purple);
+  color: black;
+  font-weight: bolder;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 200px;
+  margin-top: 20px;
+
+}
