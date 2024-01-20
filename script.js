@@ -3,6 +3,7 @@ let count = 0;
 
 const value = document.querySelector("#value");
 const btns = document.querySelectorAll(".btn");
+const button = document.querySelector(".random");
 const head = document.getElementsByClassName("header");
 const imageAdd = document.getElementById("image");
 const dog =
@@ -10,7 +11,7 @@ const dog =
 const cat =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF1IwK6-SxM83UpFVY6WtUZxXx-phss_gAUfdKbkTfau6VWVkt";
 const meerkat =
-  "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTXGti-0vTjk-fOELDzIWIsvtXXI787St5rYZA7SjtmuOoCNdlJ";
+  "https://i.natgeofe.com/k/aa27e94d-8f1d-447e-9dba-15ac242317b0/meerkat-closeup-log_4x3.jpg";
 
 btns.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
@@ -26,22 +27,36 @@ btns.forEach(function (btn) {
       count = randomNumber;
     }
 
-    if (count > 0) {
-      value.style.color = "green";
-      document.body.style.backgroundColor = "lightblue";
-    } else if (count < 0) {
-      value.style.color = "red";
-      document.body.style.backgroundColor = "lightgrey";
-    } else if (count === 0) {
+    if (count % 2 === 0) {
       value.style.color = "white";
       document.body.style.backgroundColor = "black";
       document.body.style.color = "white";
+      imageAdd.style.border = "30px solid transparent";
+      imageAdd.style.borderImage =
+        "linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)";
+      imageAdd.style.borderImageSlice = 1;
+    } else if (count > 0) {
+      value.style.color = "green";
+      document.body.style.backgroundColor = "lightblue";
+      imageAdd.style.border = "none";
+    } else if (count < 0) {
+      value.style.color = "red";
+      document.body.style.backgroundColor = "lightgrey";
+      imageAdd.style.border = "none";
     }
+    // } else if (count === 0) {
+    //   value.style.color = "white";
+    //   document.body.style.backgroundColor = "yellow";
+    //   document.body.style.color = "white";
+    // }
 
     value.textContent = count;
 
     if (count < 0) {
       imageAdd.src = dog;
+    }
+    if (count % 2 === 0) {
+      imageAdd.src = meerkat;
     } else if (count > 0) {
       imageAdd.src = cat;
     } else if (count === 0) {
